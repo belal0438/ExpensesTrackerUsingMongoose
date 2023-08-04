@@ -72,7 +72,7 @@ exports.PaginationData = async (req, res) => {
 
         let skip = (page - 1) * limit;
 
-        let ExpensesData = await Expenses.find({ userId: req.user._id }).sort({ amount: 1 }).skip(skip).limit(limit);
+        let ExpensesData = await Expenses.find({ userId: req.user._id },{_id:0, userId:0}).sort({ amount: 1 }).skip(skip).limit(limit);
         //   console.log(ExpensesData);
 
         res.status(200).json({

@@ -48,6 +48,8 @@ async function getExpenseData() {
             DisplayData(element)
         });
 
+        showPagination(getdata.data)
+
     } catch (error) {
         console.log(error)
     }
@@ -85,7 +87,7 @@ function DisplayData(obj) {
     Editbtn.onclick = async (eve) => {
         try {
             const token = localStorage.getItem('token');
-            await axios.delete(`http://localhost:4000/expenses/expenses/${obj._id}`, { headers: { 'Authorization': token }});
+            await axios.delete(`http://localhost:4000/expenses/expenses/${obj._id}`, { headers: { 'Authorization': token } });
 
             document.getElementById('amount').value = obj.amount;
             document.getElementById('descript').value = obj.decription;
@@ -105,57 +107,57 @@ function DisplayData(obj) {
 
 
 
-// async function showPagination({ currentPage, hasNextPage, nextPage, hasPreviousPage, previousPage, lastPage }) {
-//     try {
-//         const prevBtn = document.getElementById('prev');
-//         const currBtn = document.getElementById('curr');
-//         const netxBtn = document.getElementById('next');
+async function showPagination({ currentPage, hasNextPage, nextPage, hasPreviousPage, previousPage, lastPage }) {
+    try {
+        const prevBtn = document.getElementById('prev');
+        const currBtn = document.getElementById('curr');
+        const netxBtn = document.getElementById('next');
+
+        if (hasPreviousPage) {
+            prevBtn.addEventListener('click', () => {
+                // console.log("previousPage>>", previousPage)
+                getProducts(previousPage)
+
+            });
+        }
 
 
-//         if (hasPreviousPage) {
-//             prevBtn.addEventListener('click', () => {
-//                 console.log("previousPage>>",previousPage)
-//                 getProducts(previousPage)
-
-//             });
-//         }
+        currBtn.addEventListener('click', () => {
+            // console.log("currentPage>>",currentPage)
+            getProducts(currentPage)
+        });
 
 
-//         currBtn.addEventListener('click', () => {
-//             // console.log("currentPage>>",currentPage)
-//             getProducts(currentPage)
-//         });
+        if (hasNextPage) {
+            netxBtn.addEventListener('click', () => {
+                // console.log("nextPage>>",nextPage)
+                getProducts(nextPage)
+            })
+        }
 
 
-//         if (hasNextPage) {
-//             netxBtn.addEventListener('click', () => {
-//                 // console.log("nextPage>>",nextPage)
-//                 getProducts(nextPage)
-//             })
-//         }
-
-
-//     }
-//     catch (err) {
-//         console.log(err)
-//     }
-// }
-
-
-
-
-
-async function getProducts(page){
-    const token = localStorage.getItem('token');
-    let getdata = await axios.get(`http://localhost:4000/expenses/expenses_pagination?page=${1}&limit=${3}`, { headers: { 'Authorization': token } });
-    console.log(getdata.data);
-    // getdata.data.allExpense.forEach(element => {
-    //     DisplayData(element);
-    //     // console.log(element)
-    // });
-    // showPagination(getdata.data)
+    }
+    catch (err) {
+        console.log(err)
+    }
 }
-getProducts()
+
+
+
+
+
+async function getProducts(page) {
+    const token = localStorage.getItem('token');
+    let getdata = await axios.get(`http://localhost:4000/expenses/expenses_pagination?page=${page}&limit=${3}`, { headers: { 'Authorization': token } });
+    // console.log(getdata.data);
+    let Ullist = document.getElementById('Ullist');
+    Ullist.innerHTML = "";
+    getdata.data.allExpense.forEach(element => {
+        DisplayData(element);
+    });
+    showPagination(getdata.data)
+}
+
 
 // response.data.allExpense.forEach(element => {
 //     DisplayOnScreen(element);
