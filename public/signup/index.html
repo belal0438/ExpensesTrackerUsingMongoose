@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+   <header>
+      <div>
+         <a href="../login/index.html">Login</a>
+      </div>
+   </header>
+   
+   <div class="firstdiv">
+      <div>
+         <h3>SignUp</h3>
+      </div>
+      <form id="myform">
+         <div class="seconDiv">
+            <div>
+               <label>User Name</label>
+               <input type="text" id="name">
+            </div>
+            <div>
+               <label>Phone Number</label>
+               <input type="text" id="Phone">
+            </div>
+            <div>
+               <label>Email</label>
+               <input type="text" id="Email">
+            </div>
+
+            <div>
+               <label>password</label>
+               <input type="text" id="password">
+            </div>
+            <div>
+               <p>Select Gender:</p>
+               <div class="gender">
+                  <input type="radio" name="gender" value="Male">Male
+                  <input type="radio" name="gender" value="Female">Female
+                  <input type="radio" name="gender" value="Others">Others
+               </div>
+            </div>
+         </div>
+         <button class="btn">submit</button>
+      </form>
+
+   </div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+<script src="index.js"></script>
+
+</html>

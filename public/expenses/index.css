@@ -1,0 +1,88 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-image: url('https://www.travelperk.com/wp-content/uploads/Managing-business-travel-expenses.png');
+}
+
+header {
+    display: flex;
+    background-color: black;
+    height: 4vh;
+    padding: 6px;
+
+}
+
+#ulpremium{
+    list-style: none; 
+}
+
+#Ullist2{
+    list-style: none;
+}
+
+header>div{
+    display: flex;
+    margin-left: 10px;
+    gap: 12px;
+}
+
+header>div>a{
+    color: white;
+    text-decoration: none;
+}
+
+.firstdiv {
+    background: none;
+    height: 60vh;
+    width: 80vh;
+    margin: auto;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+
+}
+
+h3 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+    text-align: center;
+}
+
+.seconDiv {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+
+}
+
+.seconDiv>div {
+    display: grid;
+    gap: 1px;
+}
+
+
+.btn {
+    margin-top: 15px;
+    width: 100%;
+}
+
+#btnstatus{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 15px;
+    gap: 15px;
+}
+
+#Ullist{
+    list-style: none;
+    border-radius: 8px;
+    background-color: rgba(0,0,0,.5);
+    color: #fff;
+
+}
+
+
+
+#Ullist>li{
+    margin: 4px;
+}

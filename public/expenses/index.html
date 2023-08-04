@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header>
+        <div>
+            <a href="../signup//index.html">SignUp</a>
+            <a href="../login/index.html">Login</a>
+        </div>
+    </header>
+
+    <div>
+      <ul id="ulpremium">
+      <li><button id="Rz_premium">Buy Premium</button></li>
+      </ul>
+      <ul id="Ullist2">
+        <!-- <li>hellohelooooooooooooooooo</li> -->
+    </ul>
+    </div>
+
+    <div class="firstdiv">
+        <div>
+            <h3>Add Expenses</h3>
+        </div>
+        <form id="myform">
+            <div class="seconDiv">
+                <div>
+                    <label>Amount</label>
+                    <input type="number" id="amount">
+                </div>
+                <div>
+                    <label>Description</label>
+                    <input type="text" id="descript">
+                </div>
+                <div>
+                    <label>Categories</label>
+                    <input type="text" id="categree">
+                </div>
+            </div>
+            <button class="btn">Add Expenses</button>
+        </form>
+        <div id="btnstatus">
+            <button id="curr">current</button>
+            <button id="prev">previous</button>
+            <button id="next">next</button>
+        </div>
+
+        <div>
+            <ul id="Ullist">
+                <!-- <li>hellohelooooooooooooooooo</li> -->
+            </ul>
+        </div>
+
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+<script src="index.js"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="razorpay.js"></script>
+</html>
